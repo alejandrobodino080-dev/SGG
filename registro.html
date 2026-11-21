@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuario - SGG</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>SGG</h1>
+    </div>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema día/noche" aria-pressed="false">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-text">Modo Noche</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="auth-card">
+      <h2>Registro de Usuario</h2>
+      <p class="subtitle">Crea tu cuenta para comenzar a gestionar tus gastos</p>
+
+      <div id="alert-message" class="alert" aria-live="polite"></div>
+
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre/s</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan" required>
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido/s</label>
+          <input type="text" id="apellido" name="apellido" placeholder="Ej. Pérez" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha_nacimiento">Fecha de Nacimiento (Mayor de 14 años)</label>
+          <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico (Formato estricto)</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <div class="password-input-wrapper">
+            <input type="password" id="password" name="password" placeholder="Crea una contraseña segura" required autocomplete="new-password">
+            <button type="button" id="toggle-password" class="toggle-password-btn" title="Mostrar/Ocultar contraseña" aria-label="Mostrar contraseña">👁️</button>
+          </div>
+
+          <ul class="password-rules" aria-live="polite">
+            <li id="rule-length">❌ Mínimo 8 caracteres de longitud</li>
+            <li id="rule-upper">❌ Al menos 1 letra Mayúscula</li>
+            <li id="rule-lower">❌ Al menos 1 letra Minúscula</li>
+            <li id="rule-number">❌ Al menos 1 número (Dígito)</li>
+            <li id="rule-special">❌ Al menos 1 carácter especial (!@#$%^&*)</li>
+          </ul>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Repetir Contraseña</label>
+          <div class="password-input-wrapper">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Repite tu contraseña" required autocomplete="new-password">
+            <button type="button" id="toggle-confirm-password" class="toggle-password-btn" title="Mostrar/Ocultar contraseña" aria-label="Mostrar contraseña">👁️</button>
+          </div>
+        </div>
+
+        <button type="submit" id="btn-registrar" class="btn-primary" disabled>Crear Cuenta</button>
+      </form>
+
+      <div class="auth-links">
+        <a href="index.html">¿Ya tienes cuenta? Iniciar Sesión (RF-01)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sistema de Gestión de Gastos (SGG) - Módulo de Autenticación Completo (IEEE 830 / IEEE 829)</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+</html>
